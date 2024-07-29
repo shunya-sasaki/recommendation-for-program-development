@@ -1,10 +1,8 @@
 {#
 custom/layout.html
 ~~~~~~~~~~~~~~~~~
+https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
 
-Master layout template for Sphinx themes.
-
-:copyright: Copyright 2007-2024 by the Sphinx team, see AUTHORS.
 :license: BSD, see LICENSE for details.
 #}
 {%- block doctype -%}
@@ -20,6 +18,7 @@ Master layout template for Sphinx themes.
 {%- else %}
 {%- set titlesuffix = "" %}
 {%- endif %}
+
 
 {%- macro relbar() %}
 <div class="header" role="navigation" aria-label="Related">
@@ -47,6 +46,20 @@ Master layout template for Sphinx themes.
 </div>
 {%- endmacro %}
 
+{# Define right sidebar #}
+{%- macro right_sidebar() %}
+  {%- if theme_right_sidebars != None %}
+  test right sidebars
+  <div class="right-sidebar">
+    {%- for sidebartemplate in theme_right_sidebars %}
+    {{ sidebartemplate }}
+    {%- include sidebartemplate %}
+  {%- endfor %}
+  </div>
+  {%- endif %}
+{%- endmacro %}
+
+
 {%- macro sidebar() %}
 {%- if render_sidebar %}
 <div class="sphinxsidebar" role="navigation" aria-label="Main">
@@ -59,24 +72,24 @@ Master layout template for Sphinx themes.
         {%- endif %}
         {%- endblock %}
         {%- if sidebars != None %}
-        {#- new style sidebar: explicitly include/exclude templates #}
-        {%- for sidebartemplate in sidebars %}
-        {%- include sidebartemplate %}
-        {%- endfor %}
+            {#- new style sidebar: explicitly include/exclude templates #}
+            {%- for sidebartemplate in sidebars %}
+                {%- include sidebartemplate %}
+            {%- endfor %}
         {%- else %}
-        {#- old style sidebars: using blocks -- should be deprecated #}
-        {%- block sidebartoc %}
-        {%- include "localtoc.html" %}
-        {%- endblock %}
-        {%- block sidebarrel %}
-        {%- include "relations.html" %}
-        {%- endblock %}
-        {%- block sidebarsourcelink %}
-        {%- include "sourcelink.html" %}
-        {%- endblock %}
-        {%- block sidebarsearch %}
-        {%- include "searchbox.html" %}
-        {%- endblock %}
+            {#- old style sidebars: using blocks -- should be deprecated #}
+            {%- block sidebartoc %}
+            {%- include "localtoc.html" %}
+            {%- endblock %}
+            {%- block sidebarrel %}
+            {%- include "relations.html" %}
+            {%- endblock %}
+            {%- block sidebarsourcelink %}
+            {%- include "sourcelink.html" %}
+            {%- endblock %}
+            {%- block sidebarsearch %}
+            {%- include "searchbox.html" %}
+            {%- endblock %}
         {%- endif %}
     </div>
     {%- block sidebarextra %}{%- endblock %}
@@ -162,11 +175,10 @@ Master layout template for Sphinx themes.
         {# relbar1をここに挿入 #}
         {%- block relbar1 %}{{ relbar() }}{% endblock %}
 
+        <div class="content">
         {%- block content %}
-        <div class="sidebar1">
-            begin sidebar1
-        {%- block sidebar1 %} {# possible location for sidebar #} {% endblock %}
-            end sidebar1
+        <div class="sidebar">
+            {%- block sidebar1 %} {{ sidebar() }} {% endblock %}
         </div>
 
         <div class="document">
@@ -184,12 +196,11 @@ Master layout template for Sphinx themes.
                 {%- endif %}
             </div>
             {%- endblock %}
-            begin sidebar2
-            {%- block sidebar2 %}{{ sidebar() }}{% endblock %}
-            end sidebar2
             <div class="clearer"></div>
         </div>
         {%- endblock %}
+        {{- right_sidebar() -}}
+        </div>
 
 
         {# relbar2をここに挿入 #}
