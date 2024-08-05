@@ -16,7 +16,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinx_copybutton",
 ]
-language = "ja"
+language = "en"
 # html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
