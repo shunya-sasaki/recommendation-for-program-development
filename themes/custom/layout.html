@@ -49,10 +49,8 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
 {# Define right sidebar #}
 {%- macro right_sidebar() %}
   {%- if theme_right_sidebars != None %}
-  test right sidebars
   <div class="right-sidebar">
     {%- for sidebartemplate in theme_right_sidebars %}
-    {{ sidebartemplate }}
     {%- include sidebartemplate %}
   {%- endfor %}
   </div>
@@ -197,8 +195,8 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
             </div>
             {%- endblock %}
             <div class="clearer"></div>
-        </div>
         {%- endblock %}
+        </div>
         {{- right_sidebar() -}}
         </div>
 

@@ -3,7 +3,7 @@ inherit = "basic"
 stylesheets = []
 sidebars = [
     "searchbox.html",
-    "localtoc.html",
+    "globaltoc.html",
     "relations.html",
     "sourcelink.html",
 ]

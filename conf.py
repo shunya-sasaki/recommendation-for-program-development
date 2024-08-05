@@ -22,6 +22,7 @@ html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_theme_path = ["themes"]
 html_theme = "custom"
+# html_theme = "basic"
 exclude_patterns = ["_build", ".venv", ".mypy_cache", "Thumbs.db", ".DS_Store"]
 
 # blockdiag
