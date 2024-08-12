@@ -4,8 +4,6 @@ stylesheets = []
 sidebars = [
     "searchbox.html",
     "globaltoc.html",
-    "relations.html",
-    "sourcelink.html",
 ]
 pygments_style = { default = "monokai", dark = "monokai" }
 
