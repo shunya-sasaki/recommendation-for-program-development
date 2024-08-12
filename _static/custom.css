@@ -30,6 +30,7 @@ body {
   background-color: #ffffff;
   overflow: hidden;
 }
+
 h1 {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -44,6 +45,22 @@ h3 {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--custom-blue);
+}
+
+a h1{
+  color: var(--white);
+}
+a h1:hover{
+  color: var(--custom-blue);
+}
+
 
 div.header {
   color: white;

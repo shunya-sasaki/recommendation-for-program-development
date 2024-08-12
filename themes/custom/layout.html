@@ -22,7 +22,9 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
 
 {%- macro relbar() %}
 <div class="header" role="navigation" aria-label="Related">
-    <h1>{{ project }}</h1>
+    <a href="{{ pathto(root_doc|e) }}">
+        <h1>{{ project }}</h1>
+    </a>
     <ul class="nav-menu">
 
         {#
