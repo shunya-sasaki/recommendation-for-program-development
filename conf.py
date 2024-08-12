@@ -25,9 +25,13 @@ html_theme = "custom"
 # html_theme = "basic"
 exclude_patterns = ["_build", ".venv", ".mypy_cache", "Thumbs.db", ".DS_Store"]
 
-git_url = (
-    "https://github.com/shunya-sasaki/recommendation-for-program-development"
-)
+match html_theme:
+    case "custom":
+        html_theme_options = {
+            "git_url": "https://github.com/shunya-sasaki/"
+            + "recommendation-for-program-development",
+            "git_icon": "gitlab"
+        }
 
 
 # blockdiag

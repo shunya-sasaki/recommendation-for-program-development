@@ -17,6 +17,11 @@ help:
 livehtml:
 	sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)/html
 
+dev:
+	cp -f _static/custom.css themes/custom/static/custom.css.jinja
+	rm -rf _build
+	make html
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile

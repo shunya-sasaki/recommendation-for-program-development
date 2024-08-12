@@ -11,5 +11,7 @@ pygments_style = { default = "monokai", dark = "monokai" }
 
 # layout.htmlなどから呼び出す場合は`theme_<variable>`とする
 [options]
+git_url = "https://github.com"
+git_icon = "github"
 variable = "default value"
 right_sidebars = ["localtoc.html"]

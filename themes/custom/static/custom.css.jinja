@@ -30,6 +30,7 @@ body {
   background-color: #ffffff;
   overflow: hidden;
 }
+
 h1 {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -43,6 +44,24 @@ h2 {
 h3 {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--custom-blue);
+}
+
+a h1 {
+  color: var(--white);
+}
+a h1:hover {
+  color: var(--accent-color);
+}
+a.headerlink {
+  color: transparent;
 }
 
 div.header {
@@ -68,7 +87,7 @@ ul.nav-menu {
   display: flex;
 }
 
-ul.nav-menu li{
+ul.nav-menu li {
   marker: none;
   list-style-type: none;
   padding-right: 1rem;
@@ -99,20 +118,20 @@ div.sidebar {
   width: 15rem;
   height: 100%;
   overflow-y: visible;
-  border-right: 1px solid var(--custom-gray2);
+  border-right: 1px solid var(--secondary-color);
   /* position: fixed;
   left: 0; */
 }
 
 div.right-sidebar {
-    width: 15rem;
-    height: 100%;
-    padding-left: 2rem;
-    overflow-y: scroll;
-    border-left: 1px solid var(--custom-gray2);
-    float: right;
-    position: fixed;
-    right: 0;
+  width: 15rem;
+  height: 100%;
+  padding-left: 2rem;
+  overflow-y: scroll;
+  border-left: 1px solid var(--secondary-color);
+  float: right;
+  position: fixed;
+  right: 0;
 }
 
 div.footer {
@@ -130,6 +149,57 @@ pre {
   padding: 1rem;
 }
 
-a.headerlink {
-  color: transparent;
+div.relations {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+
+div.relations .arrow-left {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  padding-left: 1rem;
+}
+div.relations .arrow-left:hover {
+  color: var(--accent-color);
+}
+div.relations .arrow-left:before {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  margin: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0;
+  border-top: 3px solid var(--primary-color);
+  border-left: 3px solid var(--primary-color);
+  transform:  rotate(-45deg);
+}
+
+div.relations .arrow-right {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  padding-right: 1rem;
+}
+div.relations .arrow-right:hover {
+  color: var(--accent-color);
+}
+div.relations .arrow-right:before {
+  content: "";
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  margin: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0;
+  border-top: 3px solid var(--primary-color);
+  border-right: 3px solid var(--primary-color);
+  transform:  rotate(45deg);
 }

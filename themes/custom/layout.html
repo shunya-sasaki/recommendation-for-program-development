@@ -50,11 +50,14 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
 
         <li class="nav-item nav-item-this"><a href="{{ link|e }}">{{ title }}</a></li>
         {%- block relbaritems %} {% endblock %}
-        <i class="fa-brands fa-github"></i>
         
         {# Link to GitHub #}
-        <a href="{{ git_url }}">
-            <image width=32 height="32" src="{{ pathto('_static/github-brands-solid.svg', 1) }}" alt="GitHub" />
+        <a href="{{ theme_git_url }}">
+            {% if  theme_git_icon == 'github' %}
+                <image width=24 height="24" src="{{ pathto('_static/github-brands-solid.svg', 1) }}" alt="GitHub" />
+            {% elif theme_git_icon == 'gitlab' %}
+                <image width=24 height="24" src="{{ pathto('_static/gitlab-brands-solid.svg', 1) }}" alt="GitHub" />
+            {% endif %}
         </a>
     </ul>
 </div>
@@ -115,20 +118,20 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
 {%- endmacro %}
 
 {%- macro css() %}
-{%- for css in css_files %}
-{%- if css|attr("filename") %}
-{{ css_tag(css) }}
-{%- else %}
-<link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
-{%- endif %}
-{%- endfor %}
+    {%- for css in css_files %}
+        {%- if css|attr("filename") %}
+            {{ css_tag(css) }}
+        {%- else %}
+            <link rel="stylesheet" href="{{ pathto(css, 1)|e }}" type="text/css" />
+        {%- endif %}
+    {%- endfor %}
 {%- endmacro %}
 
 {%- if html_tag %}
-{{ html_tag }}
+    {{ html_tag }}
 {%- else %}
-<html{% if language is not none %} lang="{{ language }}" {% endif %} data-content_root="{{ content_root }}">
-    {%- endif %}
+    <html{% if language is not none %} lang="{{ language }}" {% endif %} data-content_root="{{ content_root }}">
+{%- endif %}
 
     <head>
         <meta charset="{{ encoding }}" />
@@ -178,8 +181,8 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
         {%- endblock %}
         {%- block extrahead %} {% endblock %}
     </head>
-    {%- block body_tag %}
 
+    {%- block body_tag %}
     <body>{% endblock %}
         {%- block header %}{% endblock %}
 
@@ -208,31 +211,44 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
             </div>
             {%- endblock %}
             <div class="clearer"></div>
-        {%- endblock %}
-        </div>
-        {{- right_sidebar() -}}
+            {%- endblock %}
+
+            <div class="relations">
+            <div>
+                {% if prev %}
+                    <a href="{{ prev.link }}" class="arrow-left">Prev</a>
+                {% endif %}
+            </div>
+                {% if next %}
+                    <a href="{{ next.link }}" class="arrow-right">Next
+                    </a>
+                {% endif %}
+            </div>
+
         </div>
 
-        <image width=32 height="32" src="_static/github-brands-solid.svg" alt="GitHub" />
+        {{- right_sidebar() -}}
+
+        </div>
 
         {%- macro copyright_block() %}
-        {%- if hasdoc('copyright') %}
-        {%- set copyright_prefix = '<a href="' + pathto('copyright') + '">' + _('Copyright') + '</a>' -%}
-        {%- else %}
-        {%- set copyright_prefix = _('Copyright') %}
-        {%- endif %}
-        {%- if copyright is iterable and copyright is not string %}
-        {% for copyright_line in copyright %}
-        {% trans trimmed copyright_prefix=copyright_prefix, copyright=copyright_line|e %}
-        &#169; {{ copyright_prefix }} {{ copyright }}.
-        {% endtrans %}
-        {%- if not loop.last %}<br />{%- endif %}
-        {% endfor %}
-        {%- else %}
-        {% trans trimmed copyright_prefix=copyright_prefix, copyright=copyright|e %}
-        &#169; {{ copyright_prefix }} {{ copyright }}.
-        {% endtrans %}
-        {%- endif %}
+            {%- if hasdoc('copyright') %}
+                {%- set copyright_prefix = '<a href="' + pathto('copyright') + '">' + _('Copyright') + '</a>' -%}
+            {%- else %}
+                {%- set copyright_prefix = _('Copyright') %}
+            {%- endif %}
+            {%- if copyright is iterable and copyright is not string %}
+                {% for copyright_line in copyright %}
+                    {% trans trimmed copyright_prefix=copyright_prefix, copyright=copyright_line|e %}
+                        &#169; {{ copyright_prefix }} {{ copyright }}.
+                        {% endtrans %}
+                        {%- if not loop.last %}<br />{%- endif %}
+                        {% endfor %}
+                        {%- else %}
+                    {% trans trimmed copyright_prefix=copyright_prefix, copyright=copyright|e %}
+                    &#169; {{ copyright_prefix }} {{ copyright }}.
+                    {% endtrans %}
+            {%- endif %}
         {%- endmacro %}
 
         {%- block footer %}
