@@ -64,6 +64,33 @@ a.headerlink {
   color: transparent;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0rem;
+  padding-inline-start: 0.5rem;
+}
+ul li {
+  list-style-type: none;
+  padding-left: 1.0rem;
+  position: relative;
+}
+ul li::before {
+  position: absolute;
+  left: 0;
+  content: "\25a0";
+  color: var(--primary-color);
+}
+
+ul.nav-menu {
+  display: flex;
+}
+
+ul.nav-menu li {
+  marker: none;
+  list-style-type: none;
+  padding-right: 1rem;
+}
+
 div.header {
   color: white;
   background-color: var(--primary-color);
@@ -83,19 +110,6 @@ div.header h1 {
   height: 3.8rem;
 }
 
-ul.nav-menu {
-  display: flex;
-}
-
-ul.nav-menu li {
-  marker: none;
-  list-style-type: none;
-  padding-right: 1rem;
-}
-
-ul {
-  padding-inline-start: 1rem;
-}
 
 div.content {
   margin-bottom: 0;
