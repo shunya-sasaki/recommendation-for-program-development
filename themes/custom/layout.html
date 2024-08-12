@@ -22,26 +22,38 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
 
 {%- macro relbar() %}
 <div class="header" role="navigation" aria-label="Related">
-    <h1>{{ docstitle }}</h1>
+    <h1>{{ project }}</h1>
     <ul class="nav-menu">
 
-        <!-- {%- for rellink in rellinks %}
-        <li class="right" {% if loop.first %}style="margin-right: 10px" {% endif %}>
-            <a href="{{ pathto(rellink[0])|e }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{
-                rellink[3] }}</a>
-            {%- if not loop.first %}{{ reldelim2 }}{% endif %}
-        </li>
-        {%- endfor %}
-        {%- block rootrellink %} -->
+        {#
+            {%- for rellink in rellinks %}
+            <li class="right" {% if loop.first %}style="margin-right: 10px" {% endif %}>
+                <a href="{{ pathto(rellink[0])|e }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{
+                    rellink[3] }}</a>
+                {%- if not loop.first %}{{ reldelim2 }}{% endif %}
+            </li>
+            {%- endfor %}
+        #}
 
-        <li class="nav-item nav-item-0"><a href="{{ pathto(root_doc)|e }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
-        {%- endblock %}
+        {# 
+            {%- block rootrellink %}
+            <li class="nav-item nav-item-0"><a href="{{ pathto(root_doc)|e }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
+            {%- endblock %}
+        #}
+
         {%- for parent in parents %}
-        <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U")
-                }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+            <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U")
+                    }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
         {%- endfor %}
+
         <li class="nav-item nav-item-this"><a href="{{ link|e }}">{{ title }}</a></li>
         {%- block relbaritems %} {% endblock %}
+        <i class="fa-brands fa-github"></i>
+        
+        {# Link to GitHub #}
+        <a href="{{ git_url }}">
+            <image width=32 height="32" src="{{ pathto('_static/github-brands-solid.svg', 1) }}" alt="GitHub" />
+        </a>
     </ul>
 </div>
 {%- endmacro %}
@@ -56,7 +68,6 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
   </div>
   {%- endif %}
 {%- endmacro %}
-
 
 {%- macro sidebar() %}
 {%- if render_sidebar %}
@@ -200,6 +211,7 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
         {{- right_sidebar() -}}
         </div>
 
+        <image width=32 height="32" src="_static/github-brands-solid.svg" alt="GitHub" />
 
         {%- macro copyright_block() %}
         {%- if hasdoc('copyright') %}

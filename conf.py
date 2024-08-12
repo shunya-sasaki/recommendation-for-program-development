@@ -25,6 +25,11 @@ html_theme = "custom"
 # html_theme = "basic"
 exclude_patterns = ["_build", ".venv", ".mypy_cache", "Thumbs.db", ".DS_Store"]
 
+git_url = (
+    "https://github.com/shunya-sasaki/recommendation-for-program-development"
+)
+
+
 # blockdiag
 blockdiag_html_image_format = "SVG"
 blockdiag_html_image_format = "SVG"
