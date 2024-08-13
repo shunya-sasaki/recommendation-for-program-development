@@ -218,6 +218,23 @@ div.relations .arrow-right:before {
   transform:  rotate(45deg);
 }
 
+div.documentparents ul{
+  display: flex;
+  list-style-type: none;
+  padding-left: 0rem;
+  padding-inline-start: 0;
+}
+div.documentparents ul li:before {
+  content: "»";
+  padding-left:0.25rem;
+}
+div.documentparents ul li:first-child {
+  padding-left: 0;
+}
+div.documentparents ul li:first-child:before {
+  content: "";
+}
+
 search#searchbox {
   padding-top: 1rem;
 }
