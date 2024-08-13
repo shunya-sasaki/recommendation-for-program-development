@@ -28,6 +28,10 @@ if "%1" == "" goto help
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 
+:livehtml
+sphinx-autobuild %SOURCEDIR% %BUILDDIR%\html
+goto end
+
 :help
 %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 

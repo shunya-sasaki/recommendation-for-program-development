@@ -9,6 +9,8 @@
   --primary: #82a0aa;
   --secondary: #b4c6cc;
   --tertiary: #3c5d69;
+  --accent: #2b72b3;
+
   --middle-blue: #2b72b3;
   --custom-red: #e31f26;
   --custom-gray1: #567783;
@@ -59,6 +61,14 @@ a.headerlink {
   color: transparent;
 }
 
+/* TODO */
+code {
+  color: var(--accent-color);
+  background-color: var(--white);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0rem;
@@ -84,6 +94,26 @@ ul.nav-menu {
 ul.nav-menu li {
   marker: none;
   list-style-type: none;
+}
+
+table, th, td {
+  border: 1px var(--primary) solid;
+  border-collapse: collapse;
+}
+
+th {
+  margin-block: 0;
+  padding: 0.5rem;
+}
+th p {
+  margin-block: 0;
+}
+
+td {
+  padding: 0.5rem;
+}
+td p{
+  margin-block: 0;
 }
 
 div.header {
@@ -187,8 +217,13 @@ div.footer {
   height: 1.7rem;
 }
 
+button.toggle-button {
+  color:white;
+}
+
 pre {
   padding: 1rem;
+  overflow-x: auto;
 }
 
 div.relations {
@@ -262,6 +297,29 @@ div.documentparents ul li:first-child {
 div.documentparents ul li:first-child:before {
   content: "";
 }
+
+div.admonition {
+  padding-bottom: 0.5rem;
+  border-left: 3px solid var(--primary-color);
+}
+div.admonition table {
+  margin: 1rem;
+}
+div.admonition {
+  background-color: var(--white);
+}
+div.admonition p {
+  padding-left: 1rem;
+}
+div.admonition.note p.admonition-title {
+  color: white;
+  background-color: var(--middle-blue);
+}
+div.admonition.warning p.admonition-title {
+  color: white;
+  background-color: var(--custom-yellow);
+}
+
 
 search#searchbox {
   padding-top: 1rem;

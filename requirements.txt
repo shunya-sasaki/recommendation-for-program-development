@@ -1,5 +1,8 @@
 Sphinx
 sphinx-autobuild
 sphinx-copybutton
+sphinx-design
+sphinx-togglebutton
+sphinx-copybutton
 sphinxcontrib-mermaid
 myst-parser
