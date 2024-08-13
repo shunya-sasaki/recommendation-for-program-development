@@ -16,6 +16,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinx_copybutton",
 ]
+exclude_patterns = ["README.md"]
 language = "en"
 # html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
@@ -30,7 +31,7 @@ match html_theme:
         html_theme_options = {
             "git_url": "https://github.com/shunya-sasaki/"
             + "recommendation-for-program-development",
-            "git_icon": "gitlab"
+            "git_icon": "github"
         }
 
 

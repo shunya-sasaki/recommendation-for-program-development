@@ -18,7 +18,6 @@ livehtml:
 	sphinx-autobuild $(SOURCEDIR) $(BUILDDIR)/html
 
 dev:
-	cp -f _static/custom.css themes/custom/static/custom.css.jinja
 	rm -rf _build
 	make html
 

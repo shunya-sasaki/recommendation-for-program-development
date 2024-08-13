@@ -23,42 +23,18 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
 {%- macro relbar() %}
 <div class="header" role="navigation" aria-label="Related">
     <a href="{{ pathto(root_doc|e) }}">
-        <h1>{{ project }}</h1>
+        <h3>{{ project }}</h3>
     </a>
-    <ul class="nav-menu">
-
-        {#
-            {%- for rellink in rellinks %}
-            <li class="right" {% if loop.first %}style="margin-right: 10px" {% endif %}>
-                <a href="{{ pathto(rellink[0])|e }}" title="{{ rellink[1]|striptags|e }}" {{ accesskey(rellink[2]) }}>{{
-                    rellink[3] }}</a>
-                {%- if not loop.first %}{{ reldelim2 }}{% endif %}
-            </li>
-            {%- endfor %}
-        #}
-
-        {# 
-            {%- block rootrellink %}
-            <li class="nav-item nav-item-0"><a href="{{ pathto(root_doc)|e }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
-            {%- endblock %}
-        #}
-
-        {%- for parent in parents %}
-            <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U")
-                    }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
-        {%- endfor %}
-
-        <li class="nav-item nav-item-this"><a href="{{ link|e }}">{{ title }}</a></li>
-        {%- block relbaritems %} {% endblock %}
-        
-        {# Link to GitHub #}
-        <a href="{{ theme_git_url }}">
-            {% if  theme_git_icon == 'github' %}
-                <image width=24 height="24" src="{{ pathto('_static/github-brands-solid.svg', 1) }}" alt="GitHub" />
-            {% elif theme_git_icon == 'gitlab' %}
-                <image width=24 height="24" src="{{ pathto('_static/gitlab-brands-solid.svg', 1) }}" alt="GitHub" />
-            {% endif %}
-        </a>
+    <ul>
+        <li>
+            <a href="{{ theme_git_url }}">
+                {% if  theme_git_icon == 'github' %}
+                    <img class="img-light" width=24 height="24" src="{{ pathto('_static/github-brands-solid.svg', 1) }}" alt="GitHub" />
+                {% elif theme_git_icon == 'gitlab' %}
+                    <img class="img-light" width=24 height="24" src="{{ pathto('_static/gitlab-brands-solid.svg', 1) }}" alt="GitHub" />
+                {% endif %}
+            </a>
+        </li>
     </ul>
 </div>
 {%- endmacro %}
@@ -245,9 +221,7 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
                     </a>
                 {% endif %}
             </div>
-
-            {{ parents }}
-
+            {# bottom of document #}
         </div>
 
         {{- right_sidebar() -}}

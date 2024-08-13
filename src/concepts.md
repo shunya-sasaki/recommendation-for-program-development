@@ -35,7 +35,7 @@ make livehtml
 
 Access the below URL.
 
-```txt
+```text
 http://localhost:8000
 ```
 
