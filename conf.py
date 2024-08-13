@@ -16,25 +16,28 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinx_copybutton",
 ]
-exclude_patterns = ["README.md"]
 language = "en"
 # html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
+# html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 html_theme_path = ["themes"]
 html_theme = "custom"
-# html_theme = "basic"
-exclude_patterns = ["_build", ".venv", ".mypy_cache", "Thumbs.db", ".DS_Store"]
+exclude_patterns = [
+    ".DS_Store",
+    ".venv",
+    ".mypy_cache",
+    "_build",
+    "Thumbs.db",
+    "README.md",
+]
 
 match html_theme:
     case "custom":
         html_theme_options = {
+            "globaltoc_collapse": False,
+            "globaltoc_includehidden": False,
+            "globaltoc_maxdepth": 2,
             "git_url": "https://github.com/shunya-sasaki/"
             + "recommendation-for-program-development",
-            "git_icon": "github"
+            "git_icon": "github",
         }
-
-
-# blockdiag
-blockdiag_html_image_format = "SVG"
-blockdiag_html_image_format = "SVG"
