@@ -9,21 +9,109 @@
   --primary: #82a0aa;
   --secondary: #b4c6cc;
   --tertiary: #3c5d69;
-  --accent: #2b72b3;
 
+  --primary-gray-20: #e6ecee;
+  --primary-gray-40: #cdd9dd;
+  --primary-gray-60: #b4c6cc;
+  --primary-gray-80: #9bb3bb;
+  --primary-gray-100: #82a0aa;
+  --primary-gray: #82a0aa;
+  --accent-20: #d4e2ef;
+  --accent-40: #aac6e0;
+  --accent-60: #7faad1;
+  --accent-80: #558ec2;
+  --accent-100: #2b72b3;
+  --accent:#2b72b3;
+  --white-20: #ffffff;
+  --white-40: #ffffff;
+  --white-60: #ffffff;
+  --white-80: #ffffff;
+  --white-100: #ffffff;
+  --white: #ffffff;
+  --black-20: #cccccc;
+  --black-40: #999999;
+  --black-60: #666666;
+  --black-80: #323232;
+  --black-100: #000000;
+  --black: #000000;
+  --dark-yellow-20: #f8e1d0;
+  --dark-yellow-40: #f1c3a1;
+  --dark-yellow-60: #eaa572;
+  --dark-yellow-80: #e38743;
+  --dark-yellow-100: #dc6914;
+  --dark-yellow: #dc6914;
+  --light-yellow-20: #fff1cc;
+  --light-yellow-40: #ffe399;
+  --light-yellow-60: #ffd566;
+  --light-yellow-80: #ffc732;
+  --light-yellow-100: #ffb900;
+  --light-yellow: #ffb900;
+  --dark-blue-20: #cce0e7;
+  --dark-blue-40: #99c1cf;
+  --dark-blue-60: #66a2b7;
+  --dark-blue-80: #32839f;
+  --dark-blue-100: #006487;
+  --dark-blue: #006487;
+  --middle-blue-20: #d4e2ef;
+  --middle-blue-40: #aac6e0;
+  --middle-blue-60: #7faad1;
+  --middle-blue-80: #558ec2;
+  --middle-blue-100: #2b72b3;
   --middle-blue: #2b72b3;
-  --custom-red: #e31f26;
-  --custom-gray1: #567783;
-  --custom-gray2: #82a0aa;
-  --custom-gray3: #223f4b;
-  --custom-blue: #006487;
-  --custom-yellow: #dc6914;
-  --custom-green: #647d2d;
-  --custom-purple: #6e1e4b;
-  --primary-color: var(--primary);
-  --secondary-color: var(--secondary);
-  --tertiary-color: var(--tertiary);
-  --accent-color: var(--middle-blue);
+  --light-blue-20: #e0eff6;
+  --light-blue-40: #c1dfed;
+  --light-blue-60: #a2cfe4;
+  --light-blue-80: #83bfdb;
+  --light-blue-100: #64afd2;
+  --light-blue: #64afd2;
+  --dark-green-20: #e0e5d5;
+  --dark-green-40: #c1cbab;
+  --dark-green-60: #a2b181;
+  --dark-green-80: #839757;
+  --dark-green-100: #647d2d;
+  --dark-green: #647d2d;
+  --light-green-20: #e9efd2;
+  --light-green-40: #d3dfa5;
+  --light-green-60: #bdcf78;
+  --light-green-80: #a7bf4b;
+  --light-green-100: #91af1e;
+  --light-green: #91af1e;
+  --dark-purple-20: #e2d2db;
+  --dark-purple-40: #c5a5b7;
+  --dark-purple-60: #a87893;
+  --dark-purple-80: #8b4b6f;
+  --dark-purple-100: #6e1e4b;
+  --dark-purple: #6e1e4b;
+  --light-purple-20: #efd3df;
+  --light-purple-40: #dfa7bf;
+  --light-purple-60: #cf7b9f;
+  --light-purple-80: #bf4f7f;
+  --light-purple-100: #af235f;
+  --light-purple: #af235f;
+  --gray-20: #eaeaea;
+  --gray-40: #d6d6d6;
+  --gray-60: #c1c1c1;
+  --gray-80: #adadad;
+  --gray-100: #999999;
+  --gray: #999999;
+  --dark-blue-gray1-20: #dde3e6;
+  --dark-blue-gray1-40: #bbc8cd;
+  --dark-blue-gray1-60: #99adb4;
+  --dark-blue-gray1-80: #77929b;
+  --dark-blue-gray1-100: #567783;
+  --dark-blue-gray1: #567783;
+  --dark-blue-gray2-20: #d8dee1;
+  --dark-blue-gray2-40: #b1bec3;
+  --dark-blue-gray2-60: #8a9da5;
+  --dark-blue-gray2-80: #637d87;
+  --dark-blue-gray2-100: #3c5d69;
+  --dark-blue-gray2: #3c5d69;
+  --dark-blue-gray3-20: #d2d8db;
+  --dark-blue-gray3-40: #a6b2b7;
+  --dark-blue-gray3-60: #7a8b93;
+  --dark-blue-gray3-80: #4e656f;
+  --dark-blue-gray3-100: #223f4b;
+  --dark-blue-gray3: #223f4b;
 }
 
 body {
@@ -39,7 +127,7 @@ h1 {
 }
 
 h2 {
-  color: var(--tertiary-color);
+  color: var(--tertiary);
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -50,21 +138,20 @@ h3 {
 
 a {
   text-decoration: none;
-  color: var(--tertiary-color);
+  color: var(--tertiary);
 }
 
 a:hover {
-  color: var(--accent-color);
+  color: var(--accent);
 }
 
 a.headerlink {
   color: transparent;
 }
 
-/* TODO */
 code {
-  color: var(--accent-color);
-  background-color: var(--white);
+  color: var(--accent);
+  background-color: var(--primary-gray-20);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -83,7 +170,7 @@ ul li::before {
   position: absolute;
   left: 0;
   content: "\25a0";
-  color: var(--primary-color);
+  color: var(--primary);
 }
 
 ul.nav-menu {
@@ -94,6 +181,9 @@ ul.nav-menu {
 ul.nav-menu li {
   marker: none;
   list-style-type: none;
+}
+ul.simple li p {
+  margin-block: 0;
 }
 
 table, th, td {
@@ -122,7 +212,7 @@ div.header {
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   justify-content: space-between;
   align-content: center;
   align-items: center;
@@ -131,7 +221,7 @@ div.header {
   height: 2.25rem;
 }
 div.header a {
-  dsipaly: flex;
+  display: flex;
   align-items: center;
   align-content: center;
   margin-block-start: 0;
@@ -141,7 +231,7 @@ div.header a {
   vertical-align: middle;
 }
 div.header a:hover {
-  color: var(--accent-color);
+  color: var(--accent);
 }
 div.header a h3 {
   margin-block-start: 0;
@@ -190,25 +280,74 @@ div.sidebar {
   width: 15rem;
   height: 100%;
   overflow-y: visible;
-  border-right: 1px solid var(--secondary-color);
-  /* position: fixed;
-  left: 0; */
+  border-right: 1px solid var(--secondary);
 }
 
 div.right-sidebar {
   width: 15rem;
   height: 100%;
-  padding-left: 2rem;
+  padding-left: 1rem;
   overflow-y: scroll;
-  border-left: 1px solid var(--secondary-color);
+  border-left: 1px solid var(--secondary);
   float: right;
   position: fixed;
   right: 0;
 }
 
+div.right-sidebar > div > ul {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0rem;
+  padding-left: 0rem;
+  padding-inline-start: 0;
+}
+div.right-sidebar > div > ul li {
+  margin-left:0;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+div.right-sidebar > div > ul li:before {
+  content: ""
+}
+/* h1 page title */
+div.right-sidebar > div > ul > li > a {
+  font-weight: bold;
+  margin-left:0;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+div.right-sidebar > div > ul > li > ul li:before {
+  position: absolute;
+  left: -1rem;
+  content: "\25a0";
+  color: var(--primary);
+}
+/* h2 page title */
+div.right-sidebar > div > ul > li > ul{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 1rem;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+/* h3 page title */
+div.right-sidebar > div > ul > li > ul > li ul {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-left:0;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+div.right-sidebar > div > ul > li > ul > li ul li:before {
+  position: absolute;
+  left: -1rem;
+  content: "-";
+  color: var(--primary);
+}
+
 div.footer {
   color: white;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -234,13 +373,13 @@ div.relations {
 }
 
 div.relations .arrow-left {
-  color: var(--primary-color);
+  color: var(--primary);
   position: relative;
   display: inline-block;
   padding-left: 1rem;
 }
 div.relations .arrow-left:hover {
-  color: var(--accent-color);
+  color: var(--accent);
 }
 div.relations .arrow-left:before {
   content: "";
@@ -252,19 +391,19 @@ div.relations .arrow-left:before {
   width: 0.5rem;
   height: 0.5rem;
   border: 0;
-  border-top: 3px solid var(--primary-color);
-  border-left: 3px solid var(--primary-color);
+  border-top: 3px solid var(--primary);
+  border-left: 3px solid var(--primary);
   transform:  rotate(-45deg);
 }
 
 div.relations .arrow-right {
-  color: var(--primary-color);
+  color: var(--primary);
   position: relative;
   display: inline-block;
   padding-right: 1rem;
 }
 div.relations .arrow-right:hover {
-  color: var(--accent-color);
+  color: var(--accent);
 }
 div.relations .arrow-right:before {
   content: "";
@@ -276,8 +415,8 @@ div.relations .arrow-right:before {
   width: 0.5rem;
   height: 0.5rem;
   border: 0;
-  border-top: 3px solid var(--primary-color);
-  border-right: 3px solid var(--primary-color);
+  border-top: 3px solid var(--primary);
+  border-right: 3px solid var(--primary);
   transform:  rotate(45deg);
 }
 
@@ -300,7 +439,11 @@ div.documentparents ul li:first-child:before {
 
 div.admonition {
   padding-bottom: 0.5rem;
-  border-left: 3px solid var(--primary-color);
+  border-left: 3px solid var(--primary);
+}
+div.admonition p.admonition-title {
+  background-color: var(--primary);
+  color: white;
 }
 div.admonition table {
   margin: 1rem;
@@ -311,15 +454,20 @@ div.admonition {
 div.admonition p {
   padding-left: 1rem;
 }
+div.admonition.note {
+  border-left-color: var(--light-blue);
+}
 div.admonition.note p.admonition-title {
   color: white;
-  background-color: var(--middle-blue);
+  background-color: var(--light-blue);
+}
+div.admonition.warning {
+  border-left-color: var(--light-yellow);
 }
 div.admonition.warning p.admonition-title {
   color: white;
-  background-color: var(--custom-yellow);
+  background-color: var(--light-yellow);
 }
-
 
 search#searchbox {
   padding-top: 1rem;
