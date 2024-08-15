@@ -9,4 +9,5 @@ caption: Contents
 src/concepts
 src/code
 src/sphinx
+src/sphinx-writing-method
 ```
