@@ -173,25 +173,37 @@ https://www.sphinx-doc.org/ja/master/development/html_themes/index.html
 
         <div class="document">
             
-            {% if title != project %}
-                <div class="documentparents">
-                    <ul>
-                    <li>
-                        <a href="{{ pathto(root_doc|e) }}">Doc</a>
-                    </li>
-                    {% if parents %}
-                        {% for parent in parents %}
-                            <li>
-                                <a href="{{ parent.link|e }}">{{ parent.title }}</a>
-                            </li>
-                        {% endfor %}
-                    {% endif %}
-                    <li>
-                        {{ title }}
-                    </li>
-                    </ul>
+            <div class="page-top">
+                {% if title != project %}
+                    <div class="documentparents">
+                        <ul>
+                        <li>
+                            <a href="{{ pathto(root_doc|e) }}">Doc</a>
+                        </li>
+                        {% if parents %}
+                            {% for parent in parents %}
+                                <li>
+                                    <a href="{{ parent.link|e }}">{{ parent.title }}</a>
+                                </li>
+                            {% endfor %}
+                        {% endif %}
+                        <li>
+                            {{ title }}
+                        </li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div class="nav-dummy"></div>
+                {% endif %}
+                <div class="nav-raw">
+
+                    {%- if show_source and has_source and sourcename %}
+                        <a href="{{ pathto('_sources/' + sourcename, 1) }}">
+                            <div class="svg-terminal"></div>
+                        </a>
+                    {%- endif %}
                 </div>
-            {% endif %}
+            </div>
 
             {%- block document %}
             <div class="documentwrapper">
