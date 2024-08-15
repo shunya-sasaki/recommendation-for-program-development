@@ -54,7 +54,7 @@ togglebutton_hint_hide = ""
 match html_theme:
     case "custom":
         html_theme_options = {
-            "globaltoc_collapse": True,
+            "globaltoc_collapse": False,
             "globaltoc_includehidden": False,
             "globaltoc_maxdepth": 2,
             "git_url": "https://github.com/shunya-sasaki/"

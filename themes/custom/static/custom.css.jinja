@@ -214,6 +214,17 @@ td p{
   margin-block: 0;
 }
 
+button.toggle-button {
+  color:white;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+
+/* header ------------------------------------------------------------------- */
 div.header {
   display: flex;
   margin-top: 0;
@@ -266,7 +277,7 @@ div.header ul li img{
   vertical-align: middle;
 }
 
-
+/* content ------------------------------------------------------------------ */
 div.content {
   margin-bottom: 0;
   height: calc(100lvh - 2.25rem - 1.7rem);
@@ -283,14 +294,149 @@ div.document {
   width: calc(100lvw - 38rem);
 }
 
-div.sidebar {
+/* document parents at the top of tha page ---------------------------------- */
+div.documentparents ul{
+  display: flex;
+  list-style-type: none;
+  padding-left: 0rem;
+  padding-inline-start: 0;
+}
+div.documentparents ul li:before {
+  content: "»";
+  padding-left:0.25rem;
+}
+div.documentparents ul li:first-child {
+  padding-left: 0;
+}
+div.documentparents ul li:first-child:before {
+  content: "";
+}
+
+/* realations at the bottom of the page ------------------------------------- */
+div.relations {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+
+div.relations .arrow-left {
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+  padding-left: 1rem;
+}
+div.relations .arrow-left:hover {
+  color: var(--accent);
+}
+div.relations .arrow-left:before {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  margin: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0;
+  border-top: 3px solid var(--primary);
+  border-left: 3px solid var(--primary);
+  transform:  rotate(-45deg);
+}
+
+div.relations .arrow-right {
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+  padding-right: 1rem;
+}
+div.relations .arrow-right:hover {
+  color: var(--accent);
+}
+div.relations .arrow-right:before {
+  content: "";
+  position: absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  margin: auto;
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 0;
+  border-top: 3px solid var(--primary);
+  border-right: 3px solid var(--primary);
+  transform:  rotate(45deg);
+}
+
+/* left sidebar ------------------------------------------------------------- */
+/* div.sidebar {
   padding-left: 2rem;
   width: 15rem;
   height: 100%;
   overflow-y: visible;
   border-right: 1px solid var(--secondary);
+} */
+div.sidebar {
+  width: 15rem;
+  height: 100%;
+  padding-left: 2rem;
+  overflow-y: scroll;
+  border-right: 1px solid var(--secondary);
 }
 
+/* h1 page title */
+div.sidebar > div.sphinxsidebar > div.sphinxsidebarwrapper > ul {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-left: 0rem;
+  padding-left: 0rem;
+  padding-inline-start: 0;
+}
+div.sidebar > div.sphinxsidebar > div.sphinxsidebarwrapper > ul li {
+  margin-left:0;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+div.sidebar > div.sphinxsidebar > div.sphinxsidebarwrapper > ul li:before {
+  content: "";
+  left: -1rem;
+  content: "\25a0";
+  color: var(--primary);
+}
+div.sidebar > div.sphinxsidebar > div.sphinxsidebarwrapper > ul > li > a {
+  margin-left:0;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+/* h2 page title */
+div.sidebar > div.sphinxsidebar > div.sphinxsidebarwrapper > ul > li > ul li:before {
+  position: absolute;
+  left: -1rem;
+  content: "-";
+  color: var(--primary);
+}
+div.sidebar > div.sphinxsidebar > div.sphinxsidebarwrapper > ul > li > ul{
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-left: 0rem;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+/* h3 page title */
+div.sidebar > div.sphinxsidebar > div.sphinxsidebarwrapper > ul > li > ul > li ul {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  margin-left:0;
+  padding-left: 0;
+  padding-inline-start: 0;
+}
+div.sidebar > div.sphinxsidebar > div.sphinxsidebarwrapper > ul > li > ul > li ul li:before {
+  position: absolute;
+  left: -1rem;
+  content: "-";
+  color: var(--primary);
+}
+/* right sidebar ------------------------------------------------------------ */
 div.right-sidebar {
   width: 15rem;
   height: 100%;
@@ -353,6 +499,7 @@ div.right-sidebar > div > ul > li > ul > li ul li:before {
   color: var(--primary);
 }
 
+/* footer ------------------------------------------------------------------- */
 div.footer {
   color: white;
   background-color: var(--primary);
@@ -364,87 +511,6 @@ div.footer {
   height: 1.7rem;
 }
 
-button.toggle-button {
-  color:white;
-}
-
-pre {
-  padding: 1rem;
-  overflow-x: auto;
-}
-
-div.relations {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem;
-}
-
-div.relations .arrow-left {
-  color: var(--primary);
-  position: relative;
-  display: inline-block;
-  padding-left: 1rem;
-}
-div.relations .arrow-left:hover {
-  color: var(--accent);
-}
-div.relations .arrow-left:before {
-  content: "";
-  position: absolute;
-  top:0;
-  left:0;
-  bottom:0;
-  margin: auto;
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 0;
-  border-top: 3px solid var(--primary);
-  border-left: 3px solid var(--primary);
-  transform:  rotate(-45deg);
-}
-
-div.relations .arrow-right {
-  color: var(--primary);
-  position: relative;
-  display: inline-block;
-  padding-right: 1rem;
-}
-div.relations .arrow-right:hover {
-  color: var(--accent);
-}
-div.relations .arrow-right:before {
-  content: "";
-  position: absolute;
-  top:0;
-  right:0;
-  bottom:0;
-  margin: auto;
-  width: 0.5rem;
-  height: 0.5rem;
-  border: 0;
-  border-top: 3px solid var(--primary);
-  border-right: 3px solid var(--primary);
-  transform:  rotate(45deg);
-}
-
-div.documentparents ul{
-  display: flex;
-  list-style-type: none;
-  padding-left: 0rem;
-  padding-inline-start: 0;
-}
-div.documentparents ul li:before {
-  content: "»";
-  padding-left:0.25rem;
-}
-div.documentparents ul li:first-child {
-  padding-left: 0;
-}
-div.documentparents ul li:first-child:before {
-  content: "";
-}
-
 /* admonitions ------------------------------------------------------------- */
 div.admonition {
   padding-bottom: 0.5rem;
@@ -452,7 +518,7 @@ div.admonition {
 }
 div.admonition p.admonition-title {
   position: relative;
-  background-color: var(--primary);
+  background-color: var(--primary-gray-20);
   color: black;
   padding-left: 2rem;
 }
@@ -586,6 +652,7 @@ div.admonition.warning p.admonition-title:after {
   mask-image: var(--triangle-exclamation);
 }
 
+/* search ------------------------------------------------------------------- */
 search#searchbox {
   padding-top: 1rem;
 }
