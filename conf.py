@@ -13,6 +13,8 @@ extensions = [
     "sphinx.ext.imgmath",
     "sphinx.ext.ifconfig",
     "sphinx.ext.imgconverter",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.autosummary",
     "sphinxcontrib.mermaid",
     "sphinx_copybutton",
     "sphinx_design",
@@ -50,6 +52,8 @@ exclude_patterns = [
 ]
 togglebutton_hint = ""
 togglebutton_hint_hide = ""
+autosummary_generate = True
+autodoc_default_flags = ['members']
 
 match html_theme:
     case "custom":

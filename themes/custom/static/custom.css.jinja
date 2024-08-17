@@ -671,6 +671,22 @@ div.admonition.warning p.admonition-title:after {
   mask-image: var(--triangle-exclamation);
 }
 
+div.sd-tab-set.docutils > input + label.sd-tab-label {
+  color: var(--primary-gray-60);
+}
+div.sd-tab-set.docutils > input:checked + label.sd-tab-label {
+  color: var(--middle-blue);
+  border-color: var(--middle-blue);
+}
+
+div.sd-tab-set.docutils > input:not(:checked) + label.sd-tab-label:hover {
+  color: var(--middle-blue);
+  border-color: var(--middle-blue);
+}
+div.sd-tab-content.docutils {
+  box-shadow: none;
+}
+
 /* svg ---------------------------------------------------------------------- */
 div.svg-terminal {
   width: 16px;
@@ -691,4 +707,37 @@ search#searchbox {
 .img-light {
   display: inline-block;
   filter: invert(100%);
+}
+
+/* api reference ------------------------------------------------------------ */
+/* functions */
+dl.py.function > dt.sig.sig-object.py {
+  color: var(--tertiary);
+  background-color: var(--primary-gray-20);
+  border-left: 3px solid var(--middle-blue);
+  padding: 0.5rem;
+}
+dl.py.function > dd > dl.field-list.simple > dt {
+  font-weight: bold;
+}
+
+
+dl.py.class > dt.sig.sig-object.py {
+  color: var(--tertiary);
+  background-color: var(--primary-gray-20);
+  border-top: 3px solid var(--middle-blue);
+  padding: 0.5rem;
+}
+dl.py.class > dt.sig.sig-object.py > em.property {
+  font-style:normal;
+}
+
+dl.py.class > dd > dl.py.method > dt.sig.sig-object.py {
+  color: var(--tertiary);
+  background-color: var(--primary-gray-20);
+  border-left: 3px solid var(--middle-blue);
+  padding: 0.5rem;
+}
+dl.py.class > dd > dl.py.method > dd > dl.field-list.simple > dt {
+  font-weight: bold;
 }
