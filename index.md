@@ -10,4 +10,5 @@ src/concepts
 src/code
 src/sphinx
 src/sphinx-writing-method
+api/index
 ```
